@@ -1,0 +1,18 @@
+[package]
+name = "rusthttpgunjs"
+version = "0.1.0"
+authors = ["Lightnet"]
+
+[dependencies]
+#ws = "*"
+#syn = "*"
+time = "*"
+http = "*"
+httparse = "*"
+tokio = "0.1"
+tokio-io = "*"
+bytes = "*"
+#serde_derive = "1.0.100"
+#serde = { version = "1.0.60", features = ["derive"] }
+#serde_derive = "1.0.100"
+serde_json = "1.0.40"
