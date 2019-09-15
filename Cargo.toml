@@ -3,16 +3,40 @@ name = "rusthttpgunjs"
 version = "0.1.0"
 authors = ["Lightnet"]
 
+#[[bin]]
+#name = "websocket-server"
+#path = "src/main.rs"
+
+#[[bin]]
+#name = "websocket-client"
+#path = "src/client.rs"
+
 [dependencies]
 #ws = "*"
 #syn = "*"
-time = "*"
-http = "*"
-httparse = "*"
-tokio = "0.1"
-tokio-io = "*"
-bytes = "*"
+#time = "*"
+#http = "*"
+#httparse = "*"
+#tokio-io = "*"
+#bytes = "*"
 #serde_derive = "1.0.100"
 #serde = { version = "1.0.60", features = ["derive"] }
 #serde_derive = "1.0.100"
-serde_json = "1.0.40"
+#serde_json = "1.0.40"
+#tokio = "0.1.22"
+#hyper = "0.12"
+#futures = "0.1"
+#websocket = "0.23.0"
+
+#backtrace = "0.3"
+#backtrace-sys = "0.1.31"
+
+actix = "0.8.2"
+actix-codec = "0.1.2"
+actix-web = "1.0.0"
+actix-web-actors = "1.0.0"
+actix-files = "0.1.1"
+#awc = "0.2.1"
+env_logger = "0.6"
+futures = "0.1"
+#bytes = "0.4"

@@ -8,11 +8,21 @@
  * https://doc.rust-lang.org/book/ch20-01-single-threaded.html
  * https://doc.rust-lang.org/1.0.0/book/installing-rust.html
  * https://forge.rust-lang.org/other-installation-methods.html#standalone
- 
  * https://gist.github.com/mjohnsullivan/e5182707caf0a9dbdf2d
  * https://crates.io/crates/actix-web
+ * https://substrate.dev/rustdocs/v1.0/tokio/index.html
+ * https://tokio-rs.github.io/tokio/doc/tokio/fs/struct.File.html
+ * https://hyper.rs/guides/server/echo/
+ * https://github.com/hyperium/hyper/blob/0.12.x/examples/upgrades.rs
+ * https://docs.rs/crate/websocket/0.23.0/source/examples/hyper.rs
+ * https://doc.rust-lang.org/std/macro.include_str.html
+ * https://docs.rs/crate/websocket/0.23.0/source/examples/hyper.rs
+ * https://github.com/actix/examples/blob/0.7/websocket/src/main.rs
  * 
-
+ * https://github.com/actix/examples/tree/0.7/websocket
+ * 
+ * 
+ * 
  
 ```rust
 fn get_two_sites() {

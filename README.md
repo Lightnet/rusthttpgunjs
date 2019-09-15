@@ -4,17 +4,18 @@
 
 ## Created By: Lightnet
 
+## Status:
+ * Learning rust lang
+ * Simple http and websocket test.
+
 ## Information:
   Just a prototype test on rust server gunjs database.
 
 ## Packages:
- * tokio
- * tokio-io
- * tokio-io
- * serde_json
+ * actix = "0.8.2"
+ * actix-web = "1.0.0"
 
 # Window Linux subsystem:
-
  Make sure you have firewall, antvirus and others else it conflict with install and setup.
 
 ```
@@ -27,4 +28,16 @@
 ```bash
  sudo apt-get update  //update packages
  sudo apt-get gcc     //install compiler
+```
+
+```cmd
+cargo run //default run app
+
+
+RUST_BACKTRACE=1 cargo run --verbose
+
+
+cargo clean
+
+cargo build 
 ```
