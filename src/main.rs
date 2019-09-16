@@ -10,8 +10,9 @@ extern crate actix_files;
 //https://docs.rs/serde_json/0.9.0-rc2/serde_json/
 //https://tutorialedge.net/rust/rust-working-with-json-tutorial/
 //https://docs.serde.rs/serde_json/macro.json.html
-// 
+//
 extern crate serde_json;
+//use std::ptr::null;
 
 use serde_json::{Value};
 use std::time::{Duration, Instant};
@@ -127,31 +128,41 @@ impl StreamHandler<ws::Message, ws::ProtocolError> for GunWebSocket {
             ws::Message::Pong(_) => {
                 self.hb = Instant::now();
             }
-            ws::Message::Text(text) => { 
+            ws::Message::Text(text) => {
                 println!("text: {:?}", text);
-
+                //https://docs.serde.rs/serde_json/value/enum.Value.html#method.as_str
                 //let data: Value = serde_json::from_str("{\"foo\": 13, \"bar\": \"baz\"}").unwrap();
                 let data: Value = serde_json::from_str(&text).unwrap();
-                println!("data: {:?}", data);
+                //println!("data: {:?}", data);
                 // data: {"bar":"baz","foo":13}
-                println!("object? {}", data.is_object());
+                //println!("object? {}", data.is_object());
                 // object? true
                 let obj = data.as_object().unwrap();
 
                 let foo = obj.get("#").unwrap();
-                println!("array? {:?}", foo.as_array());
-                // array? None 
-                println!("u64? {:?}", foo.as_u64());
-                // u64? Some(13u64)
+                println!("string? {:?}", foo.as_str());
+                println!("string? {:?}", foo);
 
-                for (key, value) in obj.iter() {
-                    println!("{}: {}", key, match *value {
-                        Value::Number(ref v) => format!("{} (number)", v),
-                        Value::String(ref v) => format!("{} (string)", v),
-                        _ => format!("other")
-                    });
+                if obj.get("get") != None{
+                    println!("get? Found!");
                 }
 
+                if obj.get("put") != None{
+                    println!("put? Found!");
+                }
+
+                //let get = obj.get("get").unwrap();
+                //println!("array? {:?}", foo.as_array());
+                // array? None
+                //println!("u64? {:?}", foo.as_u64());
+                // u64? Some(13u64)
+                //for (key, value) in obj.iter() {
+                    //println!("{}: {}", key, match *value {
+                        //Value::Number(ref v) => format!("{} (number)", v),
+                        //Value::String(ref v) => format!("{} (string)", v),
+                        //_ => format!("other")
+                    //});
+                //}
                 //send to client?
                 ctx.text(text);
             },

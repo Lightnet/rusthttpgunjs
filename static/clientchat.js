@@ -1,11 +1,14 @@
 $(function() {
-    console.log("init gunjs websocket");
     var conn = null;
+
     function log(msg) {
       var control = $('#log');
       control.html(control.html() + msg + '<br/>');
       control.scrollTop(control.scrollTop() + 1000);
     }
+
+    console.log("init client websocket");
+
     function connect() {
       disconnect();
       var wsUri = (window.location.protocol=='https:'&&'wss://'||'ws://')+window.location.host + '/ws/';
