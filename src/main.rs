@@ -3,6 +3,7 @@
 //! or [python console client](https://github.com/actix/examples/blob/master/websocket/websocket-client.py)
 //! could be used for testing.
 #![warn(unused_imports)]
+#![warn(dead_code)]
 extern crate actix;
 extern crate actix_web;
 extern crate actix_web_actors;
@@ -20,6 +21,10 @@ use actix::prelude::*;
 use actix_files as fs;
 use actix_web::{middleware, web, App, Error, HttpRequest, HttpResponse, HttpServer};
 use actix_web_actors::ws;
+
+mod hello;
+
+mod gun;
 
 /// How often heartbeat pings are sent
 const HEARTBEAT_INTERVAL: Duration = Duration::from_secs(5);
@@ -199,6 +204,14 @@ impl GunWebSocket {
 }
 
 fn main() -> std::io::Result<()> {
+
+    
+    hello::print_hello();
+    //gun::print_gun();
+    gun::get();
+    gun::put();
+
+
     std::env::set_var("RUST_LOG", "actix_server=info,actix_web=info");
     env_logger::init();
 
