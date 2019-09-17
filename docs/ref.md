@@ -28,8 +28,8 @@
  * https://rust-lang-nursery.github.io/cli-wg/tutorial/packaging.html
  * https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html
  * 
- * 
- * 
+ * https://github.com/cyderize/rust-websocket
+ * https://nbaksalyar.github.io/2015/07/10/writing-chat-in-rust.html#handshake
  * 
 
 

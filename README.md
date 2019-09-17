@@ -30,9 +30,12 @@ cargo run -p actixwebhttpgun
 | Package     | workspace       | Server | Client | Lib | File Size |
 | ---         | ---             | ---    | ---    | --- | ---       |
 | actix-web   | actixwebgun     | x      | o      | o   | 12,163 KB |
-| hyper       | hypergun        | x      | o      | o   | 5,836 KB  |
-| tokio       | tokiogun        | x      | o      | o   | 3,948 KB  |
 | warp        | warpgun         | x      | o      | o   | 8,179 KB  |
+| hyper       | hypergun        | x      | o      | o   | 5,836 KB  |
+| ws          | wsgun           | x      | o      | o   | 4,713 KB  |
+| tokio       | tokiogun        | x      | o      | o   | 3,948 KB  |
+| tungstenite | tungstenitegun  | x      | o      | o   | 3,4015 KB |
+| rouille     | rouillegun      | x      | o      | o   | 2,641 KB  |
 | http        | httpgunjs       | x      | o      | o   | 188 KB    |
 | gun         | gunrs           | o      | o      | x   | 427 KB    |
 
