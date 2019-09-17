@@ -8,10 +8,10 @@ extern crate actix;
 extern crate actix_web;
 extern crate actix_web_actors;
 extern crate actix_files;
+extern crate gunrs;
 //https://docs.rs/serde_json/0.9.0-rc2/serde_json/
 //https://tutorialedge.net/rust/rust-working-with-json-tutorial/
 //https://docs.serde.rs/serde_json/macro.json.html
-//
 
 extern crate serde_json;
 //use std::ptr::null;
@@ -23,8 +23,10 @@ use actix_files as fs;
 use actix_web::{middleware, web, App, Error, HttpRequest, HttpResponse, HttpServer};
 use actix_web_actors::ws;
 
-mod hello;
-mod gun;
+//use gunrs;
+
+//mod hello;
+//mod gun;
 //mod gun::*;
 //mod gun::{Gun};
 //use gun;
@@ -208,26 +210,30 @@ impl GunWebSocket {
 
 fn main() -> std::io::Result<()> {
 //fn main(){
-    hello::print_hello();
+
+    let gun = gunrs::Gun::new();
+    gun.get();
+
+
+    //hello::print_hello();
     //gun::print_gun();
     //gun::get();
     //gun::put();
     //let store = gun::Store::new();
-
     //let ogun = gun::Gun::new();
-
     //let open_box = gun::Gun { map: "public information" };
-    let ogun = gun::Gun::new();
-
-    ogun.put();
-    ogun.get();
-    ogun.show();
+    //let num = 10;
+    //println!("Hello, world! {} plus one is {}!", num, rustgun::add_one(num));
+    //let ogun = gun::Gun::new();
+    //ogun.put();
+    //ogun.get();
+    //ogun.show();
     //ogun.Location();
     //dbg!("{}",ogun);
     //dbg!(ogun.do_location());
-    dbg!(ogun.show());
+    //dbg!(ogun.show());
 
-    
+    //server code below
     std::env::set_var("RUST_LOG", "actix_server=info,actix_web=info");
     env_logger::init();
 

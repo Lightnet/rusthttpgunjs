@@ -25,7 +25,16 @@
  * https://doc.rust-lang.org/edition-guide/rust-2018/trait-system/impl-trait-for-returning-complex-types-with-ease.html
  * https://stackoverflow.com/questions/25413201/how-do-i-implement-a-trait-i-dont-own-for-a-type-i-dont-own
 
- 
+ * https://rust-lang-nursery.github.io/cli-wg/tutorial/packaging.html
+ * https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html
+ * 
+ * 
+ * 
+ * 
+
+
+
+
 ```rust
 fn get_two_sites() {
     // Spawn two threads to do work.

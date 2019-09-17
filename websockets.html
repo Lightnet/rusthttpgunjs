@@ -6,8 +6,8 @@
 	</head>
 	<body>
 		<script>
-			//var socket = new WebSocket("ws://127.0.0.1:8080", "rust-websocket");
-			var socket = new WebSocket("ws://127.0.0.1:8080/ws");
+			var socket = new WebSocket("ws://127.0.0.1:8080", "rust-websocket");
+			//var socket = new WebSocket("ws://127.0.0.1:8080/ws");
 			socket.onmessage = function (event) {
 				var received = document.getElementById("received");
 				var br = document.createElement("BR");

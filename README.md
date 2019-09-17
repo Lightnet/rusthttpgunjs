@@ -4,6 +4,10 @@
 
 ## Created By: Lightnet
 
+## Notes:
+ * This is just work space area folder.
+ * 
+
 ## Status:
  * Learning rust lang
  * Simple http and websocket (simple test)
@@ -15,6 +19,11 @@
 ## Packages:
  * actix = "0.8.2"
  * actix-web = "1.0.0"
+
+## run commands:
+```
+cargo run -p actixwebhttpgun
+```
 
 
 # Window Linux subsystem:
@@ -33,13 +42,19 @@
 ```
 
 ```cmd
-cargo run //default run app
-
-RUST_BACKTRACE=1 cargo run --verbose
+cargo run // default run app
 
 cargo clean //clean up build app
 
-cargo build //
+cargo build // build app
+```
+workspace
+```
+//run app
+cargo run -p actixhttpgun
+
+//run lib test check for error
+cargo test -p gunrs
 ```
 
 ## vscode:

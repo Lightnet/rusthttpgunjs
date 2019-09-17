@@ -6,15 +6,8 @@
 	</head>
 	<body>
 		<script>
-			//var socket = new WebSocket("ws://127.0.0.1:8080/foobar", "rust-websocket");
-			//var socket = new WebSocket("ws://127.0.0.1:8080", "foobar");
-			var socket = new WebSocket("ws://127.0.0.1:8080/ws");
-			//var socket = new WebSocket("ws://127.0.0.1:8080");
-
-			//var wsUri = (window.location.protocol=='https:'&&'wss://'||'ws://')+window.location.host + '/ws/';
-			//console.log(wsUri);
-			//var socket = new WebSocket(wsUri);
-
+			var socket = new WebSocket("ws://127.0.0.1:8080", "rust-websocket");
+			//var socket = new WebSocket("ws://127.0.0.1:8080/ws");
 			socket.onmessage = function (event) {
 				var received = document.getElementById("received");
 				var br = document.createElement("BR");
