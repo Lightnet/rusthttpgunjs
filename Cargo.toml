@@ -5,5 +5,5 @@ members = [
     "tokiogun",
     "hypergun",
     "warpgun",
-    "actixwebhttpgun",
+    "actixwebgun",
 ]
