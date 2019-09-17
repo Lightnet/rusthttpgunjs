@@ -1,7 +1,8 @@
 
 
 
-
+ * https://cheats.rs/
+ * https://cheats.rs/#functions-behavior
 
 # Links:
  * https://www.rust-lang.org/learn/get-started
@@ -20,9 +21,10 @@
  * https://github.com/actix/examples/blob/0.7/websocket/src/main.rs
  * 
  * https://github.com/actix/examples/tree/0.7/websocket
- * 
- * 
- * 
+ * https://doc.rust-lang.org/std/keyword.impl.html
+ * https://doc.rust-lang.org/edition-guide/rust-2018/trait-system/impl-trait-for-returning-complex-types-with-ease.html
+ * https://stackoverflow.com/questions/25413201/how-do-i-implement-a-trait-i-dont-own-for-a-type-i-dont-own
+
  
 ```rust
 fn get_two_sites() {

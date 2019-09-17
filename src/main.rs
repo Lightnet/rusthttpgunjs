@@ -12,6 +12,7 @@ extern crate actix_files;
 //https://tutorialedge.net/rust/rust-working-with-json-tutorial/
 //https://docs.serde.rs/serde_json/macro.json.html
 //
+
 extern crate serde_json;
 //use std::ptr::null;
 
@@ -23,8 +24,10 @@ use actix_web::{middleware, web, App, Error, HttpRequest, HttpResponse, HttpServ
 use actix_web_actors::ws;
 
 mod hello;
-
 mod gun;
+//mod gun::*;
+//mod gun::{Gun};
+//use gun;
 
 /// How often heartbeat pings are sent
 const HEARTBEAT_INTERVAL: Duration = Duration::from_secs(5);
@@ -204,14 +207,27 @@ impl GunWebSocket {
 }
 
 fn main() -> std::io::Result<()> {
-
-    
+//fn main(){
     hello::print_hello();
     //gun::print_gun();
-    gun::get();
-    gun::put();
+    //gun::get();
+    //gun::put();
+    //let store = gun::Store::new();
 
+    //let ogun = gun::Gun::new();
 
+    //let open_box = gun::Gun { map: "public information" };
+    let ogun = gun::Gun::new();
+
+    ogun.put();
+    ogun.get();
+    ogun.show();
+    //ogun.Location();
+    //dbg!("{}",ogun);
+    //dbg!(ogun.do_location());
+    dbg!(ogun.show());
+
+    
     std::env::set_var("RUST_LOG", "actix_server=info,actix_web=info");
     env_logger::init();
 
