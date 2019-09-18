@@ -58,6 +58,12 @@ Notes:
  * http / gun (raw with websocket/ws package???)
  * gun (wip)
 
+## command line:
+```
+
+cargo run -p datagun
+```
+
 
 ## Window Linux subsystem:
  Make sure you have firewall, antvirus and others else it conflict with install and setup.
