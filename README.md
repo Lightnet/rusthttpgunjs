@@ -6,25 +6,24 @@
 
 ## Notes:
  * This is just work space area folder.
- * Note yet build gunrs.
+ * gunrs (gunjs) work in progress.
  * Need to get each app to get http serve and websocket working.
+ * Learning rust language
 
 ## Status:
- * Learning rust language
  * Simple http and websocket (simple test)
- * Build Gun rust script.
+ * Building Gunjs Database rust to gunrs library.
 
 ## Information:
-  Just a prototype test on rust server for gunjs database setup. Testing different type of server package and ease of use and understand the rust language code.
+  Just a prototype to develop gun database rust server for gunjs database setup. Testing different type of server package and ease of use and understand the rust language code.
 
+## Porting from:
+ * https://github.com/gundb/port
+ 
 ## Packages:
  * actix = "0.8.2"
- * actix-web = "1.0.0"
+ * actix-web = "1.0.0" ( main test?)
 
-## run commands:
-```
-cargo run -p actixwebhttpgun
-```
 ## Folders workspace: 
 
 | Package     | workspace       | Server | Client | Lib | File Size |
@@ -60,10 +59,9 @@ Notes:
 
 ## command line:
 ```
-
-cargo run -p datagun
+cargo run -p actixwebgun //web host
+cargo run -p datagun //test gunrs
 ```
-
 
 ## Window Linux subsystem:
  Make sure you have firewall, antvirus and others else it conflict with install and setup.
@@ -90,7 +88,7 @@ cargo build // build app
 workspace
 ```
 //run app
-cargo run -p actixhttpgun
+cargo run -p actixhttpgun //not yet added gunrs
 
 //run lib test check for error
 cargo test -p gunrs
