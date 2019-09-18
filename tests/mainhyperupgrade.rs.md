@@ -66,7 +66,7 @@ fn main() {
     // For this example, we just make a server and our own client to talk to
     // it, so the exact port isn't important. Instead, let the OS give us an
     // unused port.
-    let addr = ([127, 0, 0, 1], 8080).into();
+    let addr = ([127, 0, 0, 1], 0).into();
 
     let server = Server::bind(&addr)
         .serve(|| service_fn_ok(server_upgrade));

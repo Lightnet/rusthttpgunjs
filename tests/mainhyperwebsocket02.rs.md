@@ -1,20 +1,42 @@
+//https://doc.rust-lang.org/book/ch01-02-hello-world.html
+
+
 // Note: `hyper::upgrade` docs link to this upgrade.
+ #![warn(unused_variables)]
+ #![warn(unused_imports)]
 extern crate futures;
 extern crate hyper;
 extern crate tokio;
 
 use std::str;
+use std::io;
 
 use futures::sync::oneshot;
 
-use hyper::{Body, Client, Request, Response, Server, StatusCode};
+use hyper::{Body, Request, Response, Server, StatusCode};
 use hyper::header::{UPGRADE, HeaderValue};
 use hyper::rt::{self, Future};
 use hyper::service::service_fn_ok;
 
+static NOTFOUND: &[u8] = b"Not Found";
+//static INDEX: &str = "index.html";
+const HTML: &'static str = include_str!("clientwebsockets.html");
+//type ResponseFuture = Box<dyn Future<Item=Response<Body>, Error=io::Error> + Send>;
+
 /// Our server HTTP handler to initiate HTTP upgrades.
 fn server_upgrade(req: Request<Body>) -> Response<Body> {
+    println!("Query:>");
+    println!("{}",req.uri());
+
+    
     let mut res = Response::new(Body::empty());
+
+    if !req.headers().contains_key("/") {
+        //*res.status_mut() = INDEX;
+        //*res.body_mut() = Body::from("Try POSTing data to /echo");
+        *res.body_mut() = Body::from(HTML);
+        return res;
+    }
 
     // Send a 400 to any request that doesn't have
     // an `Upgrade` header.
@@ -23,27 +45,14 @@ fn server_upgrade(req: Request<Body>) -> Response<Body> {
         return res;
     }
 
-    // Setup a future that will eventually receive the upgraded
-    // connection and talk a new protocol, and spawn the future
-    // into the runtime.
-    //
-    // Note: This can't possibly be fulfilled until the 101 response
-    // is returned below, so it's better to spawn this future instead
-    // waiting for it to complete to then return a response.
     let on_upgrade = req
         .into_body()
         .on_upgrade()
         .map_err(|err| eprintln!("upgrade error: {}", err))
         .and_then(|upgraded| {
-            // We have an upgraded connection that we can read and
-            // write on directly.
-            //
-            // Since we completely control this example, we know exactly
-            // how many bytes the client will write, so just read exact...
             tokio::io::read_exact(upgraded, vec![0; 7])
                 .and_then(|(upgraded, vec)| {
                     println!("server[foobar] recv: {:?}", str::from_utf8(&vec));
-
                     // And now write back the server 'foobar' protocol's
                     // response...
                     tokio::io::write_all(upgraded, b"bar=foo")
@@ -54,9 +63,6 @@ fn server_upgrade(req: Request<Body>) -> Response<Body> {
 
     rt::spawn(on_upgrade);
 
-
-    // Now return a 101 Response saying we agree to the upgrade to some
-    // made-up 'foobar' protocol.
     *res.status_mut() = StatusCode::SWITCHING_PROTOCOLS;
     res.headers_mut().insert(UPGRADE, HeaderValue::from_static("foobar"));
     res
@@ -69,8 +75,13 @@ fn main() {
     let addr = ([127, 0, 0, 1], 8080).into();
 
     let server = Server::bind(&addr)
-        .serve(|| service_fn_ok(server_upgrade));
+        .serve(|| service_fn_ok(server_upgrade))
+        .map_err(|e| eprintln!("server error: {}", e));
 
+    println!("Listening on http://{}", addr);
+    hyper::rt::run(server);
+
+    /*
     // We need the assigned address for the client to send it messages.
     let addr = server.local_addr();
 
@@ -124,4 +135,5 @@ fn main() {
                     .map_err(|e| eprintln!("client foobar io error: {}", e))
             })
     }));
+    */
 }

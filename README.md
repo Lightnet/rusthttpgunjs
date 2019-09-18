@@ -45,7 +45,20 @@ Notes:
  * Files and Websocket has not build for gunjs yet.
  * Those are just simple test file size.
 
-# Window Linux subsystem:
+## Tests:
+ * actix-web / gun (wip)
+ * warp / gun (not tested)
+ * hyper / gun (not tested)
+ * warp / gun (not tested)
+ * ws / gun (not tested)
+ * tokio / gun (not tested)
+ * tungstenite / gun (not tested)
+ * rouille / gun (not tested)
+ * http / gun (raw with websocket/ws package???)
+ * gun (wip)
+
+
+## Window Linux subsystem:
  Make sure you have firewall, antvirus and others else it conflict with install and setup.
 
 ```
