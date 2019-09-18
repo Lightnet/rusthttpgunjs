@@ -36,6 +36,7 @@ cargo run -p actixwebhttpgun
 | tokio       | tokiogun        | x      | o      | o   | 3,948 KB  |
 | tungstenite | tungstenitegun  | x      | o      | o   | 3,4015 KB |
 | rouille     | rouillegun      | x      | o      | o   | 2,641 KB  |
+| websocket   | websocketgun    | x      | o      | o   | 2,191 KB  |
 | http        | httpgunjs       | x      | o      | o   | 188 KB    |
 | gun         | gunrs           | o      | o      | x   | 427 KB    |
 

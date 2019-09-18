@@ -8,5 +8,6 @@ members = [
     "actixwebgun",
     "rouillegun",
     "tungstenitegun",
-    "wsgun"
+    "wsgun",
+    "websocketgun"
 ]
