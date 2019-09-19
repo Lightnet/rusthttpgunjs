@@ -62,13 +62,24 @@ fn writefile(){
     }
 }
 */
+/*
+static PUTSTR: &str =
+    "Hello
+world test
+";
+*/
+
+static PUTSTR: &str =
+    "Hello world put test";
+
 fn main() {
     //writefile();
     //readfile();
     let gun = gunrs::Gun::new();
-    gun.put();
-    gun.store_write();
-    gun.store_read();
+    //gun.put(PUTSTR); //ok
+    gun.get(PUTSTR);
+    //gun.store_write();
+    //gun.store_read();
 }
 
 

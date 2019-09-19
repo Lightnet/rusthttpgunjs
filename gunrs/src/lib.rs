@@ -21,6 +21,12 @@ use std::collections::HashMap;
 use std::any::TypeId;
 use std::any::Any;
 
+pub use self::ham::Ham;
+mod ham;
+
+pub use self::dup::Dup;
+mod dup;
+
 pub use self::store::Store;
 mod store;
 
@@ -35,37 +41,48 @@ pub struct Gun {
     //name: String,
     #[allow(dead_code)]
     path: String,
-    store: Store
+    store: Store,
+    #[allow(dead_code)]
+    dup:Dup,
+    #[allow(dead_code)]
+    ham:Ham
 }
 
 impl Gun {
     #[allow(dead_code)]
-    pub fn new() -> Gun {
-        Gun{
-           version: "0.1.0".to_string(),
-           opt: HashMap::new(),
-           path: "".to_string(),
-           store : Store::new()
-        }
+    pub fn new() -> Gun { //create gun
+        Gun{ //init object
+           version: "0.1.0".to_string(), //display version
+           opt: HashMap::new(), //need on work config
+           path: "".to_string(), //just testing
+           store: Store::new(), //partly tested
+           dup: Dup::new(), //placeholder
+           ham: Ham::new() //placeholder
+        }// return Gun instance
     }
+    //need to learn how get to return value
     #[allow(dead_code)]
-    pub fn get(&self) {
-        println!("get test!");
+    pub fn get(&self, data: &str) {
+        println!("get {}", data);
+        self.store.get(&"radata".to_string());
     }
+
     #[allow(dead_code)]
-    pub fn put(&self) {
-        println!("put test!");
+    pub fn put(&self,_data: &str) {
+        println!("put {}", _data);
+        self.store.put(&"radata".to_string(),_data);
+        //println!("put test!");
     }
+
+    //testing below code!
     #[allow(dead_code)]
     pub fn show(&self) {
         println!("version {}", self.version.clone());
     }
-
     #[allow(dead_code)]
     pub fn store_write(&self) {
         self.store.writefile();
     }
-
     #[allow(dead_code)]
     pub fn store_read(&self) {
         self.store.readfile();
