@@ -8,8 +8,8 @@
  * - 
  * 
 */
-
-
+// https://www.rosettacode.org/wiki/Remove_duplicate_elements#Rust
+// https://doc.rust-lang.org/rust-by-example/std/hash/hashset.html
 // https://users.rust-lang.org/t/rustify-combinators-application-to-create-map-from-string/4819/2
 // https://doc.rust-lang.org/book/ch08-03-hash-maps.html
 /*

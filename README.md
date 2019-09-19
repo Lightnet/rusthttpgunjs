@@ -26,18 +26,18 @@
 
 ## Folders workspace: 
 
-| Package     | workspace       | Server | Client | Lib | File Size |
-| ---         | ---             | ---    | ---    | --- | ---       |
-| actix-web   | actixwebgun     | x      | o      | o   | 12,163 KB |
-| warp        | warpgun         | x      | o      | o   | 8,179 KB  |
-| hyper       | hypergun        | x      | o      | o   | 5,836 KB  |
-| ws          | wsgun           | x      | o      | o   | 4,713 KB  |
-| tokio       | tokiogun        | x      | o      | o   | 3,948 KB  |
-| tungstenite | tungstenitegun  | x      | o      | o   | 3,4015 KB |
-| rouille     | rouillegun      | x      | o      | o   | 2,641 KB  |
-| websocket   | websocketgun    | x      | o      | o   | 2,191 KB  |
-| http        | httpgunjs       | x      | o      | o   | 188 KB    |
-| gun         | gunrs           | o      | o      | x   | 427 KB    |
+| Package     | Crates  | workspace       | Server | Client | Lib | File Size | Status | gunrs  | json  |
+| ---         |---      | ---             | ---    | ---    | --- | ---       | ---    | ---    | ---   |
+| actix-web   | 247     | actixwebgun     | x      | o      | o   | 12,163 KB | wip    | x      | x     |
+| warp        | 198     | warpgun         | x      | o      | o   | 8,179 KB  | ???    | o      | o     |
+| hyper       | 132     | hypergun        | x      | o      | o   | 5,836 KB  | ???    | o      | o     |
+| ws          | 81      | wsgun           | x      | o      | o   | 4,713 KB  | ???    | o      | o     |
+| tungstenite | 79      | tungstenitegun  | x      | o      | o   | 4,015 KB  | ???    | o      | o     |
+| tokio       | 118     | tokiogun        | x      | o      | o   | 3,948 KB  | ???    | o      | o     |
+| rouille     | 114     | rouillegun      | x      | o      | o   | 2,641 KB  | ???    | o      | o     |
+| websocket   | 100     | websocketgun    | x      | o      | o   | 2,191 KB  | ???    | o      | o     |
+| http        |  1      | httpgunjs       | x      | o      | o   | 188 KB    | ???    | o      | o     |
+| gunrs       |  1      | gunrs           | o      | o      | x   | 427 KB    | wip    | o      | o     |
 
 Notes:
  * Work in progress workspace.

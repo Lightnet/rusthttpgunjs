@@ -6,6 +6,7 @@ extern crate tungstenite;
 use std::fs;
 use std::io::prelude::*;
 use std::net::{TcpListener, TcpStream};
+use std::thread;
 use std::thread::spawn;
 
 use tungstenite::{accept, HandshakeError, Error, Result, Message};
@@ -57,6 +58,14 @@ fn main() {
     env_logger::init();
     let server = TcpListener::bind("127.0.0.1:8080").unwrap();
     println!("Listening for http://localhost:{}", 8080);
+
+    //thread::spawn(move || {
+        //for stream in server.incoming() {
+            //let hstream = stream.unwrap();
+		    //handle_connection(hstream);
+        //}
+    //});
+
     for stream in server.incoming() {
         spawn(move || {
             match stream {
@@ -67,6 +76,8 @@ fn main() {
                 Err(e) => warn!("Error accepting stream: {}", e),
             }
         });
+        
+        
     }
 }
 

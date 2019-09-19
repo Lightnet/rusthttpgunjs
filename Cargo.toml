@@ -1,14 +1,14 @@
 [workspace]
 
 members = [
-    "httpgunjs",
-    "tokiogun",
-    "hypergun",
-    "warpgun",
     "actixwebgun",
-    "rouillegun",
-    "tungstenitegun",
+    "datagun",
     "wsgun",
-    "websocketgun",
-    "datagun"
+    "httpgunjs",
+    "hypergun",
+    "rouillegun",
+    "tokiogun",
+    "tungstenitegun",
+    "warpgun",
+    "websocketgun"    
 ]

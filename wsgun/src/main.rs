@@ -1,5 +1,8 @@
-extern crate ws;
+
 //https://github.com/housleyjk/ws-rs/blob/stable/examples/server.rs
+
+
+extern crate ws;
 extern crate env_logger;
 
 use ws::listen;
@@ -26,5 +29,4 @@ fn main () {
         // Inform the user of failure
         println!("Failed to create WebSocket due to {:?}", error);
     }
-
 }

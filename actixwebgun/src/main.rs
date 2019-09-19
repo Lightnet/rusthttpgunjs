@@ -211,8 +211,8 @@ impl GunWebSocket {
 fn main() -> std::io::Result<()> {
 //fn main(){
 
-    let gun = gunrs::Gun::new();
-    gun.get();
+    //let gun = gunrs::Gun::new();
+    //gun.get();
 
 
     //hello::print_hello();
