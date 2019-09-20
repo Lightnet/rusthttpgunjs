@@ -6,6 +6,7 @@ members = [
     "wsgun",
     "httpgunjs",
     "hypergun",
+    "rocketgun",
     "rouillegun",
     "tokiogun",
     "tungstenitegun",

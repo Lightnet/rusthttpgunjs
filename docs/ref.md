@@ -19,20 +19,17 @@
  * https://doc.rust-lang.org/std/macro.include_str.html
  * https://docs.rs/crate/websocket/0.23.0/source/examples/hyper.rs
  * https://github.com/actix/examples/blob/0.7/websocket/src/main.rs
- * 
  * https://github.com/actix/examples/tree/0.7/websocket
  * https://doc.rust-lang.org/std/keyword.impl.html
  * https://doc.rust-lang.org/edition-guide/rust-2018/trait-system/impl-trait-for-returning-complex-types-with-ease.html
  * https://stackoverflow.com/questions/25413201/how-do-i-implement-a-trait-i-dont-own-for-a-type-i-dont-own
-
  * https://rust-lang-nursery.github.io/cli-wg/tutorial/packaging.html
  * https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html
- * 
  * https://github.com/cyderize/rust-websocket
  * https://nbaksalyar.github.io/2015/07/10/writing-chat-in-rust.html#handshake
  * https://github.com/flosse/rust-web-framework-comparison#websocket-libraries
  * https://crates.parity.io/websocket/async/struct.TcpListener.html
- * 
+ * https://github.com/tiny-http/tiny-http
  * 
  * 
  * 

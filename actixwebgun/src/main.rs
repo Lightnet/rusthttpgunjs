@@ -25,12 +25,6 @@ use actix_web_actors::ws;
 
 //use gunrs;
 
-//mod hello;
-//mod gun;
-//mod gun::*;
-//mod gun::{Gun};
-//use gun;
-
 /// How often heartbeat pings are sent
 const HEARTBEAT_INTERVAL: Duration = Duration::from_secs(5);
 /// How long before lack of client response causes a timeout
@@ -212,26 +206,12 @@ fn main() -> std::io::Result<()> {
 //fn main(){
 
     //let gun = gunrs::Gun::new();
-    //gun.get();
-
-
-    //hello::print_hello();
-    //gun::print_gun();
     //gun::get();
     //gun::put();
     //let store = gun::Store::new();
     //let ogun = gun::Gun::new();
     //let open_box = gun::Gun { map: "public information" };
-    //let num = 10;
-    //println!("Hello, world! {} plus one is {}!", num, rustgun::add_one(num));
-    //let ogun = gun::Gun::new();
-    //ogun.put();
-    //ogun.get();
     //ogun.show();
-    //ogun.Location();
-    //dbg!("{}",ogun);
-    //dbg!(ogun.do_location());
-    //dbg!(ogun.show());
 
     //server code below
     std::env::set_var("RUST_LOG", "actix_server=info,actix_web=info");

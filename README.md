@@ -29,18 +29,20 @@
 | Package     | Crates  | workspace       | Server | Client | Lib | File Size | Status | gunrs  | json  |
 | ---         |---      | ---             | ---    | ---    | --- | ---       | ---    | ---    | ---   |
 | actix-web   | 247     | actixwebgun     | x      | o      | o   | 12,163 KB | wip    | x      | x     |
+| rocket      |  83     | rocketgun       | x      | o      | o   | 8,886 KB  | ???    | o      | o     |
 | warp        | 198     | warpgun         | x      | o      | o   | 8,179 KB  | ???    | o      | o     |
 | hyper       | 132     | hypergun        | x      | o      | o   | 5,836 KB  | ???    | o      | o     |
-| ws          | 81      | wsgun           | x      | o      | o   | 4,713 KB  | ???    | o      | o     |
 | tungstenite | 79      | tungstenitegun  | x      | o      | o   | 4,015 KB  | ???    | o      | o     |
 | tokio       | 118     | tokiogun        | x      | o      | o   | 3,948 KB  | ???    | o      | o     |
 | rouille     | 114     | rouillegun      | x      | o      | o   | 2,641 KB  | ???    | o      | o     |
 | websocket   | 100     | websocketgun    | x      | o      | o   | 2,191 KB  | ???    | o      | o     |
-| http        |  1      | httpgunjs       | x      | o      | o   | 188 KB    | ???    | o      | o     |
+| ws          | 81      | wsgun           | x      | o      | o   | 1,580 KB  | ???    | o      | o     |
+| TcpListener |  1      | httpgunjs       | x      | o      | o   | 188 KB    | ???    | o      | o     |
 | gunrs       |  1      | gunrs           | o      | o      | x   | 427 KB    | wip    | o      | o     |
 
 Notes:
  * Work in progress workspace.
+ * File size vary if http and websocket different a bit.
  * Testing which build app is compact or friendly.
  * Files and Websocket has not build for gunjs yet.
  * Those are just simple test file size.
@@ -86,6 +88,10 @@ cargo run // default run app
 cargo clean //clean up build app
 
 cargo build // build app
+
+rustup default nightly
+
+//rustup default stable
 ```
 workspace
 ```
