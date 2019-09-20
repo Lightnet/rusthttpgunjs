@@ -59,7 +59,9 @@ Notes:
 
 ## command line:
 ```
-cargo run -p actixwebgun //web host
+cargo run -p actixwebgun //server host web 
+cargo run -p rouillegun //server host web 
+cargo run -p httpgunjs //server host web simple page web
 cargo run -p datagun //test gunrs
 ```
 
