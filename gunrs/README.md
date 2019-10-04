@@ -3,7 +3,7 @@
 ## license: MIT
 
 ## Information:
- The rust language is not same as javascript. There are few things does not work but there are other packages.
+ The rust language is not same as javascript. There are few things does not work but there are other packages. This is current library need to set websocket setup or add on.
 
  Rust is very strict variables and imports.
 

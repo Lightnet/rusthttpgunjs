@@ -4,15 +4,17 @@
 
 ## Created By: Lightnet
 
-## Notes:
- * This is just work space area folder.
- * gunrs (gunjs) work in progress.
- * Need to get each app to get http serve and websocket working.
- * Learning rust language
-
 ## Status:
  * Simple http and websocket (simple test)
  * Building Gunjs Database rust to gunrs library.
+ * Learning rust language
+
+## Notes:
+ * This is work space area folder.
+ * File sizes may vary if http, websocket and other packages to support web.
+ * gunrs (gunjs) work in progress.
+ * Testing which build app is compact or friendly.
+ * Files and Websocket has not build for gunjs yet.
 
 ## Information:
   Just a prototype to develop gun database rust server for gunjs database setup. Testing different type of server package and ease of use and understand the rust language code.
@@ -21,8 +23,7 @@
  * https://github.com/gundb/port
  
 ## Packages:
- * actix = "0.8.2"
- * actix-web = "1.0.0" ( main test?)
+ * actix-web = "1.0.0" ( main test area)
 
 ## Folders workspace: 
 
@@ -40,22 +41,17 @@
 | TcpListener |  1      | httpgunjs       | x      | o      | o   | 188 KB    | ???    | o      | o     |
 | gunrs       |  1      | gunrs           | o      | o      | x   | 427 KB    | wip    | o      | o     |
 
-Notes:
- * Work in progress workspace.
- * File size vary if http and websocket different a bit.
- * Testing which build app is compact or friendly.
- * Files and Websocket has not build for gunjs yet.
  * Those are just simple test file size.
 
 ## Tests:
- * actix-web / gun (wip)
- * warp / gun (not tested)
- * hyper / gun (not tested)
- * warp / gun (not tested)
- * ws / gun (not tested)
- * tokio / gun (not tested)
- * tungstenite / gun (not tested)
- * rouille / gun (not tested)
+ * actix-web / gun (tested / wip)
+ * warp / gun (partly tested)
+ * hyper / gun (partly tested)
+ * warp / gun (partly tested)
+ * ws / gun (partly tested)
+ * tokio / gun (partly tested)
+ * tungstenite / gun (partly tested)
+ * rouille / gun (partly tested)
  * http / gun (raw with websocket/ws package???)
  * gun (wip)
 
@@ -68,7 +64,7 @@ cargo run -p datagun //test gunrs
 ```
 
 ## Window Linux subsystem:
- Make sure you have firewall, antvirus and others else it conflict with install and setup.
+ Make sure you have firewall, antvirus and others disable else it conflict with install and setup.
 
 ```
  Windows 10

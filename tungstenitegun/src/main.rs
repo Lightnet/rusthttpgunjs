@@ -67,6 +67,9 @@ fn main() {
     //});
 
     for stream in server.incoming() {
+        //let hstream = stream.unwrap();
+		//handle_connection(hstream);
+
         spawn(move || {
             match stream {
                 Ok(stream) => match handle_client(stream) {
