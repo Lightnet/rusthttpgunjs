@@ -71,7 +71,7 @@ world test
 
 static PUTSTR: &str =
     "Hello world put test";
-
+// cargo run -p datagun
 fn main() {
     //writefile();
     //readfile();
@@ -80,6 +80,21 @@ fn main() {
     gun.get(PUTSTR);
     //gun.store_write();
     //gun.store_read();
+    let mut my_string = String::from("How's it going? My name is Alias.");
+
+    println!("length: {}",my_string.len());
+    println!("String is empty? {}",my_string.is_empty());
+
+    for token in my_string.split_whitespace(){
+        println!("{}",token);
+    }
+
+    println!("Does the String contain 'Alias'? {}",my_string.contains("Alias"));
+
+    my_string.push_str("welcome string add");
+
+    println!("{}",my_string);
+
 }
 
 

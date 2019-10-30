@@ -122,8 +122,6 @@ impl Actor for GunWebSocket {
 impl StreamHandler<ws::Message, ws::ProtocolError> for GunWebSocket {
     fn handle(&mut self, msg: ws::Message, ctx: &mut Self::Context) {
         // process websocket messages
-        //println!("incoming msg!");
-        //println!("WS: {:?}", msg);
         match msg {
             ws::Message::Ping(msg) => {
                 self.hb = Instant::now();
@@ -203,16 +201,6 @@ impl GunWebSocket {
 }
 
 fn main() -> std::io::Result<()> {
-//fn main(){
-
-    //let gun = gunrs::Gun::new();
-    //gun::get();
-    //gun::put();
-    //let store = gun::Store::new();
-    //let ogun = gun::Gun::new();
-    //let open_box = gun::Gun { map: "public information" };
-    //ogun.show();
-
     //server code below
     std::env::set_var("RUST_LOG", "actix_server=info,actix_web=info");
     env_logger::init();

@@ -1,6 +1,6 @@
 # rusthttpgunjs
 
-## license: MIT
+## License: MIT
 
 ## Created By: Lightnet
 
@@ -8,13 +8,6 @@
  * Simple http and websocket (simple test)
  * Building Gunjs Database rust to gunrs library.
  * Learning rust language
-
-## Notes:
- * This is work space area folder.
- * File sizes may vary if http, websocket and other packages to support web.
- * gunrs (gunjs) work in progress.
- * Testing which build app is compact or friendly.
- * Files and Websocket has not build for gunjs yet.
 
 ## Information:
   Just a prototype to develop gun database rust server for gunjs database setup. Testing different type of server package and ease of use and understand the rust language code.
@@ -24,6 +17,27 @@
  
 ## Packages:
  * actix-web = "1.0.0" ( main test area)
+  
+## Setup | Build:
+  Note you need to install rust lanuguage.
+
+ * actixwebgun (project / main)
+
+```
+cargo run -p actixhttpgun
+```
+
+ The project folder main test actixwebgun. Since it easy to develop test file.
+### Features:
+ * Server
+   * Get
+   * Put
+   * Dup Checks
+   * Hem Checks
+ * Client
+   * Send Test
+
+
 
 ## Folders workspace: 
 
@@ -101,3 +115,10 @@ cargo test -p gunrs
 ## vscode:
  * https://www.forrestthewoods.com/blog/how-to-debug-rust-with-visual-studio-code/
  * https://code.visualstudio.com/docs/editor/variables-reference
+
+## Notes:
+ * This is work space area folder.
+ * File size projects may vary if http, websocket and other packages to support web.
+ * gunrs (gunjs) work in progress.
+ * Testing which build app is compact or friendly.
+ * Files and Websocket has not build for gunjs yet.
