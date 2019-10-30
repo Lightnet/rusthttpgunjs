@@ -1,1 +1,0 @@
-This is just http serve html test.

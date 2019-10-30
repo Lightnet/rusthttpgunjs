@@ -1,1 +1,0 @@
-The test for http and websocket simple test.

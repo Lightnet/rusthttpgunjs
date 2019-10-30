@@ -3,13 +3,5 @@
 members = [
     "actixwebgun",
     "datagun",
-    "wsgun",
-    "httpgunjs",
-    "hypergun",
-    "rocketgun",
-    "rouillegun",
-    "tokiogun",
-    "tungstenitegun",
-    "warpgun",
-    "websocketgun"    
+    "gunrs"
 ]

@@ -1,1 +1,0 @@
-Have not yet work on http but work for websocket.
