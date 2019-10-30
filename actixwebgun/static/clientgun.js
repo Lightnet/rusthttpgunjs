@@ -4,7 +4,7 @@ $(function() {
         console.log(msg);
     }
 
-    log("init gunjs websocket");
+    log("init gunjs websocket 0.02");
 
     var conn = null;
     var wsUri = (window.location.protocol=='https:'&&'wss://'||'ws://')+window.location.host + '/gun/';
@@ -51,5 +51,15 @@ $(function() {
             get:{name:"foo"}
         };
         conn.send(JSON.stringify(msg));
+    });
+
+    $('#btngnull').click(function() {
+        console.log("null");
+        log("get");
+        //var msg = {
+            //"#":"ASDF",
+            //get:{name:"foo"}
+        //};
+        //conn.send(JSON.stringify(msg));
     });
 });

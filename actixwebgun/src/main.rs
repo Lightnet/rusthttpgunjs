@@ -17,6 +17,8 @@ extern crate serde_json;
 //use std::ptr::null;
 
 use serde_json::{Value};
+//use serde_json::json;
+
 use std::time::{Duration, Instant};
 use actix::prelude::*;
 use actix_files as fs;
@@ -29,6 +31,9 @@ use actix_web_actors::ws;
 const HEARTBEAT_INTERVAL: Duration = Duration::from_secs(5);
 /// How long before lack of client response causes a timeout
 const CLIENT_TIMEOUT: Duration = Duration::from_secs(10);
+
+//===============================================
+// WEB SOCKET STRUCT / FUNCTIONS
 
 /// do websocket handshake and start `MyWebSocket` actor
 fn ws_index(r: HttpRequest, stream: web::Payload) -> Result<HttpResponse, Error> {
@@ -74,6 +79,8 @@ impl StreamHandler<ws::Message, ws::ProtocolError> for MyWebSocket {
         }
     }
 }
+//===============================================
+// GUN  STRUCT / FUNCTIONS
 
 /// do websocket handshake and start `GunSocket` actor
 fn gun_index(r: HttpRequest, stream: web::Payload) -> Result<HttpResponse, Error> {
@@ -134,16 +141,26 @@ impl StreamHandler<ws::Message, ws::ProtocolError> for GunWebSocket {
                 println!("text: {:?}", text);
                 //https://docs.serde.rs/serde_json/value/enum.Value.html#method.as_str
                 //let data: Value = serde_json::from_str("{\"foo\": 13, \"bar\": \"baz\"}").unwrap();
+                //https://github.com/serde-rs/json
                 let data: Value = serde_json::from_str(&text).unwrap();
+                
                 //println!("data: {:?}", data);
+                //println!("data: {}", data["#"]);
                 // data: {"bar":"baz","foo":13}
                 //println!("object? {}", data.is_object());
+                println!("data: {}", data["#"]);
+                if data["#"] != Value::Null {
+                    println!("Found! #")
+                }else{
+                    println!("Null #")
+                }
+
                 // object? true
                 let obj = data.as_object().unwrap();
 
-                let foo = obj.get("#").unwrap();
-                println!("string? {:?}", foo.as_str());
-                println!("string? {:?}", foo);
+                //let foo = obj.get("#").unwrap();
+                //println!("string? {:?}", foo.as_str());
+                //println!("string? {:?}", foo);
 
                 if obj.get("get") != None{
                     println!("get? Found!");
