@@ -79,16 +79,7 @@ impl StreamHandler<ws::Message, ws::ProtocolError> for MyWebSocket {
         }
     }
 }
-//===============================================
-// GUN  STRUCT / FUNCTIONS
 
-/// do websocket handshake and start `GunSocket` actor
-fn gun_index(r: HttpRequest, stream: web::Payload) -> Result<HttpResponse, Error> {
-    println!("{:?}", r);
-    let res = ws::start(GunWebSocket::new(), &r, stream);
-    println!("{:?}", res.as_ref().unwrap());
-    res
-}
 impl MyWebSocket {
     fn new() -> Self {
         Self { hb: Instant::now() }
@@ -111,12 +102,29 @@ impl MyWebSocket {
         });
     }
 }
+//===============================================
+// GUN  STRUCT / FUNCTIONS
+
+struct Key {
+
+}
+
+/// do websocket handshake and start `GunSocket` actor
+fn gun_index(r: HttpRequest, stream: web::Payload) -> Result<HttpResponse, Error> {
+    println!("{:?}", r);
+    let res = ws::start(GunWebSocket::new(), &r, stream);
+    println!("{:?}", res.as_ref().unwrap());
+    res
+}
+
 /// websocket connection is long running connection, it easier
 /// to handle with an actor
 struct GunWebSocket {
     /// Client must send ping at least once per 10 seconds (CLIENT_TIMEOUT),
     /// otherwise we drop connection.
     hb: Instant,
+    #[allow(dead_code)]
+    key: Key,//store keys ???
 }
 impl Actor for GunWebSocket {
     type Context = ws::WebsocketContext<Self>;
@@ -150,9 +158,9 @@ impl StreamHandler<ws::Message, ws::ProtocolError> for GunWebSocket {
                 //println!("object? {}", data.is_object());
                 println!("data: {}", data["#"]);
                 if data["#"] != Value::Null {
-                    println!("Found! #")
+                    println!("Found! #");
                 }else{
-                    println!("Null #")
+                    println!("Null #");
                 }
 
                 // object? true
@@ -164,6 +172,12 @@ impl StreamHandler<ws::Message, ws::ProtocolError> for GunWebSocket {
 
                 if obj.get("get") != None{
                     println!("get? Found!");
+                    //self.dup(String::from("test call"));
+                    //println!("{}", Value::String(data["#"].to_string()) );
+                    println!("{}", data["#"].to_string() );
+                    //self.dup(obj.get("#"));
+
+                    self.dup(data["#"].to_string());
                 }
 
                 if obj.get("put") != None{
@@ -192,11 +206,12 @@ impl StreamHandler<ws::Message, ws::ProtocolError> for GunWebSocket {
             ws::Message::Nop => (),
         }
     }
+    
 }
 
 impl GunWebSocket {
     fn new() -> Self {
-        Self { hb: Instant::now() }
+        Self { hb: Instant::now(), key: Key{} }//websocket, key (store list / fun keys)
     }
     /// helper method that sends ping to client every second.
     ///
@@ -214,6 +229,13 @@ impl GunWebSocket {
             }
             ctx.ping("");
         });
+    }
+    //duplication check for keys
+    #[allow(dead_code)]
+    fn dup(&mut self,data: String){
+        println!("data hash #: {}", data);
+
+        //println!("key {:#?}", self.key);
     }
 }
 
