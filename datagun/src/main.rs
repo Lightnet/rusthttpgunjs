@@ -5,6 +5,14 @@
 #![warn(unused_imports)]
 #![warn(dead_code)]
 extern crate gunrs;
+extern crate serde_json;
+//use std::ptr::null;
+//https://doc.rust-lang.org/std/hash/trait.Hash.html
+use std::collections::HashMap;
+//use std::hash::{Hash, Hasher};
+//use std::hash::Hash::hash;
+use serde_json::{Value};
+//use serde_json::json;
 
 
 /*
@@ -72,28 +80,66 @@ world test
 static PUTSTR: &str =
     "Hello world put test";
 // cargo run -p datagun
+
+struct Key {
+}
+
+//#[derive(Debug, Hash)]
+struct Gunlist {
+    //key: HashMap<String, u32>,
+    //key: HashMap<String, u32>,
+    key: Vec<Value>,
+}
+
+impl Default for Gunlist {
+    fn default() -> Gunlist {
+        Gunlist {
+            //key:Key{}
+            //key: HashMap::new()
+            key: Vec::new()
+        }
+    }
+}
+
+impl Gunlist {
+    //pub fn new() -> Gunlist {
+        //Gunlist {
+            //key:Key{}
+            //key: HashMap::new(),
+        //}
+    //}
+}
+
+
+//https://stackoverflow.com/questions/56184109/how-to-convert-vec-to-jsonvalue-in-rust
 fn main() {
     //writefile();
     //readfile();
+    //
+    //let mut apu0 = Gunlist::new();
+    let mut apu = Gunlist::default();
+    //apu.key;
+
+    //
     let gun = gunrs::Gun::new();
-    //gun.put(PUTSTR); //ok
-    gun.get(PUTSTR);
+    gun.put(PUTSTR); //ok
+    //gun.get(PUTSTR);
     //gun.store_write();
     //gun.store_read();
-    let mut my_string = String::from("How's it going? My name is Alias.");
+    //let mut my_string = String::from("How's it going? My name is Alias.");
 
-    println!("length: {}",my_string.len());
-    println!("String is empty? {}",my_string.is_empty());
+    //println!("length: {}",my_string.len());
+    //println!("String is empty? {}",my_string.is_empty());
 
-    for token in my_string.split_whitespace(){
-        println!("{}",token);
-    }
+    //for token in my_string.split_whitespace(){
+        //println!("{}",token);
+    //}
 
-    println!("Does the String contain 'Alias'? {}",my_string.contains("Alias"));
+    //println!("Does the String contain 'Alias'? {}",my_string.contains("Alias"));
 
-    my_string.push_str("welcome string add");
+    //my_string.push_str("welcome string add");
 
-    println!("{}",my_string);
+    //println!("{}",my_string);
 
 }
 
